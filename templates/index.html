@@ -3,7 +3,7 @@
     <title>Image Repo</title>
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <link rel="stylesheet" href="../static/main.css">
+        <link rel="stylesheet" href="/static/main.css">
     </head>
 
     <body>
@@ -34,6 +34,7 @@
             {% for img in imgs %}
                 <span class="img_container">
                     <a href=/static/imgs/{{img}}><img src='/static/imgs/{{img}}' width=100 height=100/></a>
+                    <a class="delete" href="{{url_for('delete', filename=img)}}">x</a>
                 </span>
             {% endfor %}        
         

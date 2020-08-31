@@ -1,0 +1,32 @@
+h1 {
+    padding: 2% 0 0 0;
+  }
+  
+  a, a:hover {
+    text-decoration: none;
+    color: red;
+  }
+  
+  img:hover {
+    opacity: 0.5;
+  }
+  
+  .img_container {
+    position: relative;
+  }
+  
+  .delete {
+    font-weight: bold;
+    size: 12px;
+    position: absolute;
+    right: 5px;
+    padding: 0px 7px;
+    opacity: 50%;
+    background-color: grey;
+  }
+  
+  .delete:hover {
+    background: black;
+    opacity: 80%;
+  }
+  
