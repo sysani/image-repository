@@ -1,12 +1,12 @@
+from app import app
 import os, os.path
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory, flash
 from werkzeug.utils import secure_filename
 import secrets
 
-UPLOAD_FOLDER = './static/imgs'
+UPLOAD_FOLDER = './app/static/imgs'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
-app = Flask(__name__)
 secret = secrets.token_urlsafe(32)
 app.secret_key = secret
 app.config["DEBUG"] = True
@@ -15,17 +15,10 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-#delete image
-@app.route('/delete/<filename>')
-def delete(filename):
-    file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-    os.remove(file_path)
-    return redirect(url_for('index'))
-
 @app.route("/", methods=['POST','GET'])
-def index():
+def home():
     #save imgs to display
-    imgs = os.listdir('static/imgs/')
+    imgs = os.listdir('app/static/imgs/')
 
     if request.method == 'POST':
         if 'image' not in request.files:
@@ -43,15 +36,26 @@ def index():
         if image and allowed_file(image.filename):
             filename = secure_filename(image.filename)
             image.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect(url_for('index'))
+            return redirect(url_for('home'))
 
         else:
             flash('Image could not be uploaded. Please use .jpg, .jpeg, .gif or .png filetypes only!')
-        
-    return render_template("index.html", imgs=imgs)
+            
+    return render_template("home.html", imgs=imgs)
+
+@app.route('/hello')
+def hello():
+    return 'hello'
+
+#delete image
+@app.route('/delete/<filename>')
+def delete(filename):
+    file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+    os.remove(file_path)
+    return redirect(url_for('home'))
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0", threaded=True)
 
 
 # export FLASK_APP=app.py

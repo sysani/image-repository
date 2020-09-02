@@ -3,6 +3,7 @@ __pycache__/
 *$py.class
 
 .DS_STORE
+supervisord.pid
 
 # Flask stuff:
 instance/
