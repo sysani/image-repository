@@ -13,13 +13,14 @@ h1 {
   
   .img_container {
     position: relative;
+    display: inline-block;
   }
   
   .delete {
     font-weight: bold;
     size: 12px;
     position: absolute;
-    right: 5px;
+    right: 0px;
     padding: 0px 7px;
     opacity: 50%;
     background-color: grey;
