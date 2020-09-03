@@ -43,10 +43,6 @@ def home():
             
     return render_template("home.html", imgs=imgs)
 
-@app.route('/hello')
-def hello():
-    return 'hello'
-
 #delete image
 @app.route('/delete/<filename>')
 def delete(filename):
@@ -56,8 +52,4 @@ def delete(filename):
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", threaded=True)
-
-
-# export FLASK_APP=app.py
-# flask run
 
