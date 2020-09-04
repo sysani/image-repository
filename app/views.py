@@ -4,6 +4,9 @@ from flask import Flask, render_template, request, redirect, url_for, send_from_
 from werkzeug.utils import secure_filename
 import secrets
 
+if not os.path.exists('./app/static/imgs'):
+    os.makedirs('./app/static/imgs')
+
 UPLOAD_FOLDER = './app/static/imgs'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
