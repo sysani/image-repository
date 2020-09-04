@@ -53,6 +53,15 @@ def delete(filename):
     os.remove(file_path)
     return redirect(url_for('home'))
 
+#delete all images
+@app.route('/delete_all/')
+def delete_all():
+    imgs = os.listdir('app/static/imgs/')
+    for img in imgs:
+        file_path = os.path.join(app.config['UPLOAD_FOLDER'], img)
+        os.remove(file_path)
+    return redirect(url_for('home'))
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", threaded=True)
 

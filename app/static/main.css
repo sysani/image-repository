@@ -1,33 +1,53 @@
+.navbar {
+  padding: 0;
+  margin: 0;
+}
+
 h1 {
-    padding: 2% 0 0 0;
-  }
+  padding: 2% 0 0 0;
+}
   
-  a, a:hover {
-    text-decoration: none;
-    color: red;
-  }
+.delete, .delete:hover {
+  text-decoration: none;
+  color: red;
+}
   
-  img:hover {
-    opacity: 0.5;
-  }
+img:hover {
+  opacity: 0.5;
+}
   
-  .img_container {
-    position: relative;
-    display: inline-block;
-  }
+.img_container {
+  position: relative;
+  display: inline-block;
+}
   
-  .delete {
-    font-weight: bold;
-    size: 12px;
-    position: absolute;
-    right: 0px;
-    padding: 0px 7px;
-    opacity: 50%;
-    background-color: grey;
-  }
+.delete {
+  font-weight: bold;
+  size: 12px;
+  position: absolute;
+  right: 0px;
+  padding: 0px 7px;
+  opacity: 50%;
+  background-color: grey;
+}
   
-  .delete:hover {
-    background: black;
-    opacity: 80%;
-  }
+.delete:hover {
+  background: black;
+  opacity: 80%;
+}
+
+.delete_all, .delete_all:hover {
+  color: #d9534f;
+  font-weight: bold;
+}
+
+.btn-outline-danger {
+  margin: 4% 0 0 0;
+}
+
+.btn-outline-danger:hover {
+  background-color: #f5d1ce;
+}
+
+  
   
