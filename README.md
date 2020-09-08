@@ -16,6 +16,12 @@ To specify a different port, supply the port number as an argument to the comman
 
 runs the app on port 5051.
 
+To check if the app is running, run
+
+```docker ps```
+
+It should say img.repo is up and the port it can be accessed at.
+
 ## Using the app
 
 Choose an image and select 'Upload Image' to upload it to the repository. The image must be .png, .jpeg, .jpg, or .gif. You can upload a maximum of 50 images. The uploaded image will be displayed as a 100x100 icon. To view the image in full size, simply click on it. Clicking the trash icon in the upper right corner deletes the image.
